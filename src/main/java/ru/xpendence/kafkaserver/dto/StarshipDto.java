@@ -1,6 +1,7 @@
 package ru.xpendence.kafkaserver.dto;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * Author: Vyacheslav Chernyshov
@@ -8,6 +9,7 @@ import lombok.Data;
  * Time: 18:52
  * e-mail: vyacheslav.chernyshov@stoloto.ru
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class StarshipDto extends AbstractDto {
 
