@@ -37,11 +37,11 @@ public class StarshipServiceImpl implements StarshipService {
     @Override
     public void send(StarshipDto dto) {
         log.info("<= sending {}", writeValueAsString(dto));
-        kafkaStarshipTemplate.send("server.starship", dto);
+        kafkaStarshipTemplate.send("test", dto);
     }
 
     @Override
-    @KafkaListener(id = "Starship", topics = {"server.starship"}, containerFactory = "kafkaListenerContainerFactory")
+    @KafkaListener(id = "Starship", topics = {"test"}, containerFactory = "kafkaListenerContainerFactory")
     public void consume(StarshipDto dto) {
         log.info("=> consumed {}", writeValueAsString(dto));
     }
